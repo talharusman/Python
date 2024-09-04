@@ -1,0 +1,5 @@
+Name: tlha
+CNIC: 1234
+Age: 23
+Salary: 23344.00
+Contact Number: 1234
