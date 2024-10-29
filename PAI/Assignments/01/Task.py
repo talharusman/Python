@@ -12,18 +12,18 @@ class Animal:
         self.available = False
     
     def info(self):
-        info = f"Name: {self.name},Age: {self.age},Habitat: {self.habitat},Available: {self.available}"
+        info = f"Name: {self.name}, Age: {self.age}, Habitat: {self.habitat}, Available: {'Yes' if self.available else 'No'}"
         return info
     
 class Mammals(Animal):
-    def __init__(self, name, age, habitat,fur_length, diet_type):
+    def __init__(self, name, age, habitat, fur_length, diet_type):
         super().__init__(name, age, habitat)
         self.fur_length = fur_length
         self.diet_type = diet_type
 
     def info(self):
-        Basic_info = super.info()
-        info = f"{Basic_info},Fur Length: {self.fur_length},Diet Type: {self.diet_type}."
+        basic_info = super().info()
+        info = f"{basic_info}, Fur Length: {self.fur_length}, Diet Type: {self.diet_type}"
         return info
     
 class Birds(Animal):
@@ -33,19 +33,19 @@ class Birds(Animal):
         self.flight = flight
 
     def info(self):
-        Basic_info = super().info()
-        info = f"{Basic_info},Wingspan: {self.wingspan},Flight: {self.flight}."
+        basic_info = super().info()
+        info = f"{basic_info}, Wingspan: {self.wingspan}, Flight: {self.flight}"
         return info
 
 class Reptiles(Animal):
-    def __init__(self, name, age, habitat, pattern , venomous):
+    def __init__(self, name, age, habitat, pattern, venomous):
         super().__init__(name, age, habitat)
         self.pattern = pattern
         self.venomous = venomous
 
     def info(self):
-        Basic_info = super().info()
-        info = f"{Basic_info},Pattern: {self.pattern},Venomous: {self.venomous}."
+        basic_info = super().info()
+        info = f"{basic_info}, Pattern: {self.pattern}, Venomous: {'Yes' if self.venomous else 'No'}"
         return info
     
 
@@ -54,19 +54,18 @@ lion = Mammals("Lion", 5, "Savannah", "Short", "Carnivore")
 eagle = Birds("Eagle", 3, "Mountains", "2 meters", "3000 meters")
 snake = Reptiles("Python", 2, "Rainforest", "Spotted", False)
 
-    # Displaying their information
-print(lion.display_info())
-print(eagle.display_info())
-print(snake.display_info())
+# Displaying their information
+print(lion.info())
+print(eagle.info())
+print(snake.info())
 
-    # Changing availability status
+# Changing availability status
 lion.mark_quarantine()
 eagle.mark_available()
 snake.mark_quarantine()
 
-    # Displaying updated information
+# Displaying updated information
 print("\nAfter changing availability:")
-print(lion.display_info())
-print(eagle.display_info())
-print(snake.display_info())                                         
-
+print(lion.info())
+print(eagle.info())
+print(snake.info())
